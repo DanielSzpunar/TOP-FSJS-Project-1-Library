@@ -54,30 +54,56 @@ function addBookToLibrary() {
   clearFields()
   displayBooks()
 }
-//let theHobbit = new Book("dan", 'daniel szpunar', 233, true)
-//console.log(theHobbit.info())
-
-
-
 
 //Display Library func
 
 function displayBooks() {
-  console.log('displayBooks is executing')
   let container = document.getElementById('container')
+  container.innerHTML = ''
   for(i = 0; i < userLibrary.length; i++) {
     let bookDiv = document.createElement('div')
     bookDiv.style.border = '1px solid black'
+    bookDiv.id = i
     
     let titlePara = document.createElement('p')
-    titlePara.innerHTML = userLibrary[i].title;
+    titlePara.innerHTML = `Title: ${userLibrary[i].title}`
     bookDiv.appendChild(titlePara)
-    
-    let authorPara = document.createElement('p')
-    authorPara.innerHTML = userLibrary[i].author;
-    bookDiv.appendChild(authorPara)
-    container.append(bookDiv)
-    
-  }
 
+    let authorPara = document.createElement('p')
+    authorPara.innerHTML = `Author: ${userLibrary[i].author}`
+    bookDiv.appendChild(authorPara)
+    
+    let pagePara = document.createElement('p')
+    pagePara.innerHTML = `Pages: ${userLibrary[i].pages}`
+    bookDiv.appendChild(pagePara)
+
+    let completedPara = document.createElement('p')
+    completedPara.innerHTML = `Completed: ${userLibrary[i].haveRead}`
+    bookDiv.appendChild(completedPara)
+    
+    let toggleCompleteBtn = document.createElement('button')
+    toggleCompleteBtn.innerHTML = 'toggle completion'
+    toggleCompleteBtn.onclick = toggleComplete
+    toggleCompleteBtn.setAttribute('class', i)
+    bookDiv.appendChild(toggleCompleteBtn)
+
+    let delBtn = document.createElement('button')
+    delBtn.innerHTML = 'delete'
+    delBtn.setAttribute('id', i)
+    delBtn.onclick = deleteBook
+    bookDiv.appendChild(delBtn)
+
+    container.appendChild(bookDiv)
+  }
+}
+function deleteBook() {
+  console.log(this.id)
+  userLibrary.splice(this.id,1)
+  displayBooks()
+}
+function toggleComplete() {
+  if (userLibrary[this.className].haveRead) {
+    userLibrary[this.className].haveRead = false;
+  } else userLibrary[this.className].haveRead = true
+  displayBooks()
 }
