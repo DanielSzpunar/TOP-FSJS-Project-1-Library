@@ -1,0 +1,79 @@
+html {
+  font-family: sans-serif;
+}
+h1 {
+  text-align: center;
+  font-weight: 300;
+}
+#showFormBtn {
+  margin: auto;
+}
+#showFormDiv {
+  margin:auto;
+  display: flex;
+}
+#displayList {
+  margin:auto;
+  display:flex;
+}
+#formDiv {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+#radioDiv {
+  display:flex;
+  justify-content:center;
+  align-content: center;
+  text-align: center;
+  gap: 10px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+button {
+  background-color:#f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color:#3c4043;
+  font-size: 14px;
+  margin: 11px 4px;
+  padding: 0 16px;
+  line-height: 27px;
+  height: 36px;
+  min-width: 54px;
+  cursor: pointer;
+  user-select: none;
+}
+button:hover {
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+input[type=text], input[type=number]{
+  background-color:#f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color:#3c4043;
+  font-size: 14px;
+  margin: 8px 4px;
+  padding: 0 8px;
+  line-height: 10px;
+  height: 26px;
+  min-width: 54px;
+  cursor: pointer;
+  user-select: none;
+}
+.radioDiv {
+  padding:20px;
+  margin: 100px;
+}
+.radioBtn {
+  height: 18px;
+  margin:0px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline:none;
+}

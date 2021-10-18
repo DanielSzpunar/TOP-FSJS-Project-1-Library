@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="./scripts/main.js" defer></script>
 </head>
+
 <body>
-  <h1>Library</h1>
-  <div>
-    <label for="title">Title:</label>
-    <input type="text" id="title"><br>
-    <label for="title">Author:</label>
-    <input type="text" id="author" ><br>
-    <label for="pages">Pages:</label>
-    <input type="number" id="pages" ><br>
-    <label for="completed">Completed:</label>
-    <input type="radio" id="completedYes" name="completed" value="yes" >
-    <label for="completedYes">Yes</label>
-    <input type="radio" id="completedNo" name="completed" value="no" checked="checked">
-    <label for="completedNo">No</label><br>
-    <button type="submit" onclick="addBookToLibrary()">Add Book to Library</button>
+  <h1>My Library</h1>
+  <div id="showFormDiv">
+    <button id="showFormBtn" onclick="displayForm()">Add Book</button>
+  </div>
+  <div id="formDiv">
+    <div><label for="title">Title:</label>
+      <input type="text" id="title"><br>
+    </div>
+
+    <div>
+      <label for="title">Author:</label>
+      <input type="text" id="author"><br>
+    </div>
+    <div>
+      <label for="pages">Pages:</label>
+      <input type="number" id="pages"><br>
+    </div>
+
+    <div id="radioDiv">
+      <label for="completed">Completed:</label>
+      <input type="radio" class="radioBtn" id="completedYes" name="completed" value="yes">
+      <label for="completedYes">Yes</label>
+      <input type="radio" class="radioBtn" id="completedNo" name="completed" value="no" checked="checked">
+      <label for="completedNo">No</label><br>
+    </div>
+    <div>
+      <button type="submit" onclick="addBookToLibrary()">Add Book to Library</button>
+    </div>
   </div>
   <div id="container"></div>
 </body>
+
 </html>

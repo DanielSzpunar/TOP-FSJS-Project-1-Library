@@ -1,5 +1,19 @@
-let userLibrary = [{title: 'dan', author: 'daniel szpunar', pages: 233, haveRead: true}]
+let userLibrary = []
 
+const formDiv = document.getElementById('formDiv')
+formDiv.style.visibility = 'hidden';
+
+function displayForm() {
+  formDiv.style.visibility = 'visible'
+  showFormBtn.style.visibility = 'hidden'
+}
+function displayList() {
+  console.log("display List")
+  if (userLibrary.length === 0) {
+    alert('No books to display.')
+  } 
+  displayBooks()
+}
 
 function Book(title, author, pages, haveRead) {
   this.title = title,
@@ -106,4 +120,15 @@ function toggleComplete() {
     userLibrary[this.className].haveRead = false;
   } else userLibrary[this.className].haveRead = true
   displayBooks()
+}
+
+
+//LocalStorage:
+
+const saveLocal = () => {
+  localStorage.setItem('library', JSON.stringify(userLibrary))
+}
+const restoreLocal = () => {
+  const books = JSON.parse(localStorage.getItem('library') || "[]")
+  
 }
